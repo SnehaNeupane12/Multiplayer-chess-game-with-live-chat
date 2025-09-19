@@ -1,0 +1,42 @@
+:root{
+  --bg: linear-gradient(135deg,#ff7a7a,#ffd36e,#7affc8,#87a7ff);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);min-height:100vh}
+.app{max-width:1200px;margin:0 auto;padding:16px}
+.app-header{display:flex;align-items:center;gap:16px;color:#111}
+.app-header h1{font-size:42px;margin:0;padding:8px 16px;border-radius:16px;background:#fff8}
+.tag{margin:0;color:#222;background:#fff8;padding:6px 10px;border-radius:12px}
+
+.mode-picker{display:flex;gap:12px;margin:16px 0}
+.btn{border:none;border-radius:14px;padding:12px 16px;cursor:pointer;font-weight:700;box-shadow:0 6px 20px #0002}
+.btn.primary{background:#111;color:#fff}
+.btn.secondary{background:#fff;color:#111}
+.btn.tiny{padding:4px 8px;border-radius:8px;margin-left:8px}
+
+.game-area{display:grid;grid-template-columns:minmax(320px,520px) 1fr;gap:16px;align-items:start}
+.board{aspect-ratio:1/1;width:100%;border-radius:20px;overflow:hidden;box-shadow:0 20px 40px #0003;background:#111}
+.row{display:grid;grid-template-columns:repeat(8,1fr);height:12.5%}
+.square{display:flex;align-items:center;justify-content:center;font-size:44px;user-select:none;position:relative;transition:transform .05s}
+.square.light{background:#ffe7a7}
+.square.dark{background:#f26bb3}
+.square.highlight{outline:6px solid #00ff99aa;z-index:2}
+.square.can-move::after{content:"";position:absolute;inset:0;border:4px dashed #00d4ffaa;border-radius:8px}
+.turn-indicator{margin:8px 0;padding:6px 8px;background:#fff8;border-radius:10px;display:inline-block}
+
+.chat{background:#fff9;border-radius:16px;padding:10px;backdrop-filter:blur(6px);box-shadow:0 8px 24px #0002}
+.chat-log{height:360px;overflow:auto;border-radius:10px;background:#fff;padding:8px}
+.chat-line{margin:6px 0}
+.chat-line .name{font-weight:700;margin-right:6px}
+.chat-input{display:flex;gap:8px;margin-top:8px}
+.chat-input input{flex:1;padding:10px;border-radius:12px;border:1px solid #0002}
+.suggests{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.suggests button{background:#111;color:#fff;border:none;border-radius:12px;padding:6px 10px;cursor:pointer}
+
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:12px 16px;border-radius:16px;box-shadow:0 12px 30px #0004;display:flex;align-items:center;gap:8px;z-index:9999}
+
+.emoji-splash{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;font-size:96px;animation:pop .6s ease-out;pointer-events:none}
+@keyframes pop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.1);opacity:1}100%{transform:scale(1);opacity:.2}}
+
+.lobby{background:#fff9;padding:12px;border-radius:16px;box-shadow:0 8px 24px #0002}
+.room-id{font-family:monospace;font-size:18px;background:#000; color:#0f0;padding:4px 8px;border-radius:8px}
