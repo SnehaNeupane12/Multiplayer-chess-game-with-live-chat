@@ -1,4 +1,4 @@
-# Pawn Me Freak
+# ChessGame
 
 A vibrant chess game built with **React + Vite** (frontend) and **Node.js + Socket.IO** (backend).  
 Play offline vs bots or online with friends — with live chat, auto-suggest messages, and flashy captures.
